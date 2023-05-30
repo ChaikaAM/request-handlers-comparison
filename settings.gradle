@@ -1,3 +1,7 @@
 rootProject.name = 'request-handlers-comparison'
 
 include('slow-server')
+include('01-thread-pool')
+include('02-webflux')
+include('03-coroutines')
+include('04-project-loom')
