@@ -13,12 +13,16 @@ import reactor.core.publisher.Flux;
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 import java.util.Map;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
+/**
+ * Router for slow responses. Response time could be up to 7 seconds and determined randomly
+ */
 @Configuration
 public class SlowResponseRouter {
 
@@ -34,7 +38,7 @@ public class SlowResponseRouter {
                 Flux.fromStream(
                                 IntStream.range(1, 11)
                                         .mapToObj(it -> Map.entry(it + " of 10", "ok")))
-                        .delayElements(Duration.of(500, ChronoUnit.MILLIS))
+                        .delayElements(Duration.of(ThreadLocalRandom.current().nextLong(700), ChronoUnit.MILLIS))
                 , Map.Entry.class);
     }
 }
