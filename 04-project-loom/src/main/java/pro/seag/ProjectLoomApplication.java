@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SlowServer {
+public class ProjectLoomApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SlowServer.class, args);
+        SpringApplication.run(ProjectLoomApplication.class, args);
     }
 
 }
