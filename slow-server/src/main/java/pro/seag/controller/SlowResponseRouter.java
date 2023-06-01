@@ -38,7 +38,7 @@ public class SlowResponseRouter {
                 Flux.fromStream(
                                 IntStream.range(1, 11)
                                         .mapToObj(it -> Map.entry(it + " of 10", "ok")))
-                        .delayElements(Duration.of(ThreadLocalRandom.current().nextLong(700), ChronoUnit.MILLIS))
+                        .delayElements(Duration.of(ThreadLocalRandom.current().nextLong(400), ChronoUnit.MILLIS))
                 , Map.Entry.class);
     }
 }
