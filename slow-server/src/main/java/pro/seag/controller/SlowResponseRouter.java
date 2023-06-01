@@ -21,7 +21,9 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 import static org.springframework.web.reactive.function.server.ServerResponse.ok;
 
 /**
- * Router for slow responses. Response time could be up to 7 seconds and determined randomly
+ * Router for slow responses.
+ * Response time could be up to 4 seconds and determined randomly.
+ * Average response time - 2 seconds
  */
 @Configuration
 public class SlowResponseRouter {
